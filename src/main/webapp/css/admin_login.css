@@ -1,0 +1,98 @@
+/* CSS Document */
+html, body, div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+.right {
+	float: right;
+	}
+/*html body {
+	  margin: 0;
+	  padding: 0;
+	  background: url('../images/admin_bg.png');
+	  repeat: no-repeat;
+	  background-attachment: fixed;
+   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/admin_bg.png', sizingMethod='scale');
+   -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/admin_bg.png', sizingMethod='scale');
+	  background-size: cover;
+	  -moz-background-size: cover;
+	  -webkit-background-size: cover;
+  }*/
+  
+  
+  
+.login_wrap {
+	background: url('../images/logo_bg.jpg');
+	repeat: no-repeat;
+	background-attachment: fixed;
+ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo_bg.jpg', sizingMethod='scale');
+ -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo_bg.jpg', sizingMethod='scale');
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+}
+.logo {
+	width: 500px;
+	height: 150px;
+	margin: 0px auto;
+	background: url(../images/logowz.png) no-repeat center;
+}
+.login_bg {
+	position: absolute;
+	width: 300px;
+	height: 280px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	background: #FFFFFF;
+}
+.login_title {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 25px;
+	color: #888888;
+	height: 40px;
+	border-bottom: solid 1px #CCCCCC;
+}
+.cy_login_form {
+	width: 100%;
+}
+
+div input {
+	width: 240px;
+	margin: 22px 20px 0 22px;
+	text-font: 25px;
+	height: 25px;
+	border: solid 1px #CCCCCC;
+	padding: 6px;
+	}
+.forget_psw {
+	display: inline-block;
+	margin: 5px auto;
+	width: 80px;
+	height: 30px;
+	font-size:13px;
+	text-decoration:none;
+	color: #3cf;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.cy_login_button {
+	  height:40px;
+	  width:256px;
+	  text-align:center;
+	  margin:20px 22px;
+	  display:block;
+	  color:#ffffff;
+	  background:#ff0000;
+	  border:none;
+	  cursor:pointer;
+	  color:14px;
+	  
+	}

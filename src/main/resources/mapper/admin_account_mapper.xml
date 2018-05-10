@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chyu.www.dao.AdminAccoutInterfaceDao">
+    <!-- 添加管理员账号 -->
+	<insert id="addAdminAccount" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO admin_account(user_name, password, admin_type, realname,head_image) 
+		VALUES(#{user_name},#{password},${admin_type},#{realname},#{head_image})
+	</insert>
+	<!-- 修改管理员账号  -->
+	<update id="modAdminAccount">
+	    update admin_account set user_name=#{user_name},user_name=#{user_name},
+	    admin_type=${admin_type},realname=#{realname},head_image=#{head_image} where id=${id}
+	</update>
+</mapper>  

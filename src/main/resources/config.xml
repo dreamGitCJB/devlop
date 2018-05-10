@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app>
+    <upload>
+    	<path>/Users/apple/Desktop/www/src/main/webapp/upload</path>
+        <!--  必须使用正斜杠 / -->
+    	<!-- <path>E:/公司项目/红雨校园OA系统/src/main/webapp/upload</path> -->
+    </upload>
+    <accessfrequency>
+    	<enable>true</enable>
+    	<exclude></exclude>
+    	<lockseconds>10</lockseconds>
+    </accessfrequency>
+</app>

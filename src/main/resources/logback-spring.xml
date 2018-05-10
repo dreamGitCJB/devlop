@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<!-- 控制台打印日志的相关配置 --> 
+	 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+	    <!-- 日志格式 -->
+	    <encoder>
+	        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%level] - %m%n</pattern>
+	    </encoder>
+	    <!-- 日志级别过滤器 -->
+	    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+	      <!-- 过滤的级别 -->
+	      <level>INFO</level>
+	      <!-- 匹配时的操作：接收（记录） -->
+	      <onMatch>ACCEPT</onMatch>
+	      <!-- 不匹配时的操作：拒绝（不记录） -->
+	      <onMismatch>DENY</onMismatch>
+	    </filter>
+	  </appender>
+  
+  <!-- 文件保存日志的相关配置 -->
+  <appender name="INFO_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+     <!-- 保存日志文件的路径 -->
+    <file>${LOG_PATH}/logs/info.log</file>
+    <!-- 日志格式 -->
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%class:%line] - %m%n</pattern>
+    </encoder>
+    <!-- 日志级别过滤器 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <!-- 过滤的级别 -->
+      <level>INFO</level>
+      <!-- 匹配时的操作：接收（记录） -->
+      <onMatch>ACCEPT</onMatch>
+      <!-- 不匹配时的操作：拒绝（不记录） -->
+      <onMismatch>DENY</onMismatch>
+    </filter>
+    <!-- 循环政策：基于时间创建日志文件 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- 日志文件名格式 -->
+      <fileNamePattern>${LOG_PATH}/logs/info.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!-- 最大保存时间：30天-->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+ 
+  <appender name="ERROR_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+     <!-- 保存日志文件的路径 -->
+    <file>${LOG_PATH}/logs/error.log</file>
+    <!-- 日志格式 -->
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%class:%line] - %m%n</pattern>
+    </encoder>
+    <!-- 日志级别过滤器 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <!-- 过滤的级别 -->
+      <level>ERROR</level>
+      <!-- 匹配时的操作：接收（记录） -->
+      <onMatch>ACCEPT</onMatch>
+      <!-- 不匹配时的操作：拒绝（不记录） -->
+      <onMismatch>DENY</onMismatch>
+    </filter>
+    <!-- 循环政策：基于时间创建日志文件 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- 日志文件名格式 -->
+      <fileNamePattern>${LOG_PATH}/logs/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!-- 最大保存时间：30天-->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+	<!--打印SQL -->
+	<!-- <logger name="com.humyu.psoa.dao" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger> -->
+
+	<!-- root, 只有在level及以上级别的日志会被输出 -->
+	<!-- 例如: 当root level设置为INFO时, appender DEBUG中无法获取到DEBUG级别的日志事件, 则DEBUG日志信息也不会写入debug.log中. -->
+	<!-- TRACE,DEBUG,INFO,WARN,ERROR,FATAL -->
+	<root level="DEBUG">
+		<appender-ref ref="INFO_OUT" />
+		<appender-ref ref="ERROR_OUT" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
